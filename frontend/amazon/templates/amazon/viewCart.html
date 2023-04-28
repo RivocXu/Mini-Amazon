@@ -1,0 +1,41 @@
+{% extends 'amazon/base.html' %}
+
+{% block content %}
+  <h1>Shopping Cart</h1>
+
+  <style>
+    th {
+      width: 40%;
+    }
+    td {
+      width: 45%;
+    }
+  </style>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          <td>{{ item.product.description }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.get_total_price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total:</td>
+        <td>{{ total_price }}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <a href="{% url 'placeOrder' %}"><button>Place Order</button></a>
+{% endblock %}

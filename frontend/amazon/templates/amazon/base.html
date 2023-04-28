@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mini Amazon</title>
+    <meta charset="UTF-8"\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #232f3e;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #fff;
+            color: #232f3e;
+            transition: all 0.3s ease-in-out;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            margin-top: 20px;
+            padding: 50px;
+            border-radius: 5px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: #232f3e;
+            margin-bottom: 30px;
+        }
+        .hero p {
+            font-size: 24px;
+            color: #666;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .cta button {
+            background-color: #232f3e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .cta button:hover {
+            background-color: #fff;
+            color: #232f3e;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Mini Amazon</div>
+            <nav class="navigation">
+                {% if user.is_authenticated %}
+                {% comment %} <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> {% endcomment %}
+                    <li><a href="{% url 'home' %}" class="nav-link px-2 link-blue ">HomePage</a></li>
+                    {% comment %} <li><a href="{% url 'placeOrder' %}" class="nav-link px-2 link-blue">Place a Order</a></li> {% endcomment %}
+                    <li><a href="{% url 'productList' %}" class="nav-link px-2 link-blue">Product List</a></li>
+                    <li><a href="{% url 'viewCart' %}" class="nav-link px-2 link-blue">Shopping Cart</a></li>
+                    <li><a href="{% url 'orderList' %}" class="nav-link px-2 link-blue">View Orders</a></li>
+                    {% comment %} <li><a href="{% url 'orderStatus' %}" class="nav-link px-2 link-blue">My Orders</a></li>
+                    <li><a href="{% url 'shoppingCart' %}" class="nav-link px-2 link-blue">Shopping Cart</a></li>
+                    <li><a href="{% url 'editProfile' %}" class="nav-link px-2 link-blue">Edit Profile</a></li>
+                    <li><a href="{% url 'cataLog' %}" class="nav-link px-2 link-blue">Product CataLog</a></li> {% endcomment %}
+                {% comment %} </ul> {% endcomment %}
+                {% endif %}
+
+                <div class="col-md-3 text-end">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="btn btn-outline-primary">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+                    {% endif %}
+                </div>
+                {% comment %} <a href="#">Products</a>
+                <a href="#">Cart</a>
+                <a href="#">Account</a> {% endcomment %}
+            </nav>
+        </header>
+        
+    </div>
+
+    {% block content %}{% endblock %}
+
+</body>
+
+
+
+</html>

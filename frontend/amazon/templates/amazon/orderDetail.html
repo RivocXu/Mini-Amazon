@@ -1,0 +1,20 @@
+{% extends "amazon/base.html" %}
+
+{% block content %}
+  <h1>Order {{ order.id }}</h1>
+  <p>Status: {{ status }}</p>
+  <p>Location: {{ order.location_x }}, {{ order.location_y }}</p>
+  <p>Warehouse: {{ order.wh_id }}</p>
+  <p>Truck: {{ order.truck_id }}</p>
+  <p>Note: {{ order.note }}</p>
+  <h2>Order Items:</h2>
+  {% if items %}
+    <ul>
+      {% for item in items %}
+        <li>{{ item.product.description }} - {{ item.count }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No items found.</p>
+  {% endif %}
+{% endblock %}

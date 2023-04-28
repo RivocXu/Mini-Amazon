@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+import "world_amazon.proto";
+
+message order{
+    required int32 orderid = 1;
+    repeated AProduct products = 2;
+}
+

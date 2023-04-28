@@ -1,0 +1,20 @@
+{% extends "amazon/base.html" %}
+{% block content %}
+
+<html>
+  <div class="hero">
+    <div class="content">
+        <h1>Welcome to Mini Amazon</h1>
+        <h1>current username is {{user.username}}</h1>
+        <p>Shop for everything !</p>
+        <div class="cta">
+            {% comment %} <button>Shop Now</button> {% endcomment %}
+            <a href="{% url 'productList' %}"><button>Shop Now</button></a>
+        </div>
+    </div>
+</div>
+</html>
+
+
+
+{% endblock content %}

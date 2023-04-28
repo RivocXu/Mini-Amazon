@@ -1,0 +1,15 @@
+{% extends "amazon/base.html" %}
+
+{% block content %}
+  <h1>My Orders</h1>
+  {% if orders %}
+    <ul>
+      {% for order in orders %}
+        {% comment %} <li><a href="{% url 'orderDetail' order.id %}">{{ order.id }} - {{ order.status.value }}</a></li> {% endcomment %}
+        <li><a href="{% url 'orderDetail' order.id %}">Order ({{ order.id }}) {{ order.status.value }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No orders found.</p>
+  {% endif %}
+{% endblock %}
