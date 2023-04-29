@@ -58,12 +58,20 @@ python3 manage.py runserver
 ```
 ## step7: Place order from website
 1. sign up
+
 ** note that you have to enter the password in the right form!**
+
 2. log in
 3. press shop now
 4. add to chart
+
+
 ** note that you have to add products to shopping chart seperately, you cannot add to chart at the same time. **
+
+
 ** and now we only have two products available **
+
+
 5. check chart
 6. place order
 Once you placed the order from the website, the process will start.
