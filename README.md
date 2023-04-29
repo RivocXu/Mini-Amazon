@@ -56,8 +56,18 @@ python3 server.py
 ```
 python3 manage.py runserver
 ```
-## step7:
-once you placed the order from the website, the process will work as expected.
+## step7: Place order from website
+1. sign up
+** note that you have to enter the password in the right form!**
+2. log in
+3. press shop now
+4. add to chart
+** note that you have to add products to shopping chart seperately, you cannot add to chart at the same time. **
+** and now we only have two products available **
+5. check chart
+6. place order
+Once you placed the order from the website, the process will start.
+And you can start debugging.
 
 We have already tested this version with Xin's group based on the latest version of gpb.
 Feel free to contact us if you have any problems met!
