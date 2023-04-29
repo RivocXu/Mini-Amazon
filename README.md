@@ -66,7 +66,7 @@ python3 manage.py runserver
 4. add to chart
 
 
-** note that you have to add products to shopping chart seperately, you cannot add to chart at the same time. **
+** note that you have to add products to shopping chart seperately, you cannot add different type of products to chart at the same time. **
 
 
 ** and now we only have two products available **
